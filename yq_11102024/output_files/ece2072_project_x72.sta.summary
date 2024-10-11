@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'KEY[1]'
+Slack : -14.163
+TNS   : -1396.682
+
+Type  : Slow 1200mV 85C Model Setup 'simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -6.006
+TNS   : -133.588
+
+Type  : Slow 1200mV 85C Model Hold 'simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -0.995
+TNS   : -0.995
+
+Type  : Slow 1200mV 85C Model Hold 'KEY[1]'
+Slack : 0.393
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.166
+TNS   : -318.823
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'KEY[1]'
+Slack : -12.886
+TNS   : -1268.134
+
+Type  : Slow 1200mV 0C Model Setup 'simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -5.512
+TNS   : -123.130
+
+Type  : Slow 1200mV 0C Model Hold 'simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -0.801
+TNS   : -0.801
+
+Type  : Slow 1200mV 0C Model Hold 'KEY[1]'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.166
+TNS   : -318.823
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : 0.267
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'KEY[1]'
+Slack : -5.795
+TNS   : -528.823
+
+Type  : Fast 1200mV 0C Model Setup 'simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -1.997
+TNS   : -41.276
+
+Type  : Fast 1200mV 0C Model Hold 'simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -0.357
+TNS   : -0.357
+
+Type  : Fast 1200mV 0C Model Hold 'KEY[1]'
+Slack : 0.169
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -260.296
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : 0.308
+TNS   : 0.000
+
+------------------------------------------------------------

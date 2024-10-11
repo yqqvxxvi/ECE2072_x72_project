@@ -1,0 +1,1230 @@
+Analysis & Synthesis report for ece2072_project_x72
+Thu Oct 10 18:10:42 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor
+ 13. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg_IR
+ 14. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg0
+ 15. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg1
+ 16. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg2
+ 17. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg3
+ 18. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg4
+ 19. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg5
+ 20. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg6
+ 21. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg7
+ 22. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:regA
+ 23. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:regG
+ 24. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:regDisp
+ 25. Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|tick_FSM:tick_fsm
+ 26. Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod0
+ 27. Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1
+ 28. Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod2
+ 29. Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod3
+ 30. Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div3
+ 31. Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div2
+ 32. Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1
+ 33. Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div0
+ 34. Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|ALU:alu|lpm_mult:Mult0
+ 35. lpm_mult Parameter Settings by Entity Instance
+ 36. Port Connectivity Checks: "simple_proc_extension:u_processor|BCD:tick_hex5"
+ 37. Port Connectivity Checks: "simple_proc_extension:u_processor|register_n:regDisp"
+ 38. Port Connectivity Checks: "simple_proc_extension:u_processor"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 10 18:10:42 2024       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; ece2072_project_x72                         ;
+; Top-level Entity Name              ; proc_extension_inst                         ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 1,535                                       ;
+;     Total combinational functions  ; 1,407                                       ;
+;     Dedicated logic registers      ; 189                                         ;
+; Total registers                    ; 189                                         ;
+; Total pins                         ; 70                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 2                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++------------------------------------------------------------------+---------------------+---------------------+
+; Option                                                           ; Setting             ; Default Value       ;
++------------------------------------------------------------------+---------------------+---------------------+
+; Device                                                           ; 10M50DAF484C7G      ;                     ;
+; Top-level entity name                                            ; proc_extension_inst ; ece2072_project_x72 ;
+; Family name                                                      ; MAX 10              ; Cyclone V           ;
+; Use smart compilation                                            ; Off                 ; Off                 ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                  ; On                  ;
+; Enable compact report table                                      ; Off                 ; Off                 ;
+; Restructure Multiplexers                                         ; Auto                ; Auto                ;
+; Create Debugging Nodes for IP Cores                              ; Off                 ; Off                 ;
+; Preserve fewer node names                                        ; On                  ; On                  ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable              ; Enable              ;
+; Verilog Version                                                  ; Verilog_2001        ; Verilog_2001        ;
+; VHDL Version                                                     ; VHDL_1993           ; VHDL_1993           ;
+; State Machine Processing                                         ; Auto                ; Auto                ;
+; Safe State Machine                                               ; Off                 ; Off                 ;
+; Extract Verilog State Machines                                   ; On                  ; On                  ;
+; Extract VHDL State Machines                                      ; On                  ; On                  ;
+; Ignore Verilog initial constructs                                ; Off                 ; Off                 ;
+; Iteration limit for constant Verilog loops                       ; 5000                ; 5000                ;
+; Iteration limit for non-constant Verilog loops                   ; 250                 ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                  ; On                  ;
+; Infer RAMs from Raw Logic                                        ; On                  ; On                  ;
+; Parallel Synthesis                                               ; On                  ; On                  ;
+; DSP Block Balancing                                              ; Auto                ; Auto                ;
+; NOT Gate Push-Back                                               ; On                  ; On                  ;
+; Power-Up Don't Care                                              ; On                  ; On                  ;
+; Remove Redundant Logic Cells                                     ; Off                 ; Off                 ;
+; Remove Duplicate Registers                                       ; On                  ; On                  ;
+; Ignore CARRY Buffers                                             ; Off                 ; Off                 ;
+; Ignore CASCADE Buffers                                           ; Off                 ; Off                 ;
+; Ignore GLOBAL Buffers                                            ; Off                 ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                 ; Off                 ;
+; Ignore LCELL Buffers                                             ; Off                 ; Off                 ;
+; Ignore SOFT Buffers                                              ; On                  ; On                  ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                 ; Off                 ;
+; Optimization Technique                                           ; Balanced            ; Balanced            ;
+; Carry Chain Length                                               ; 70                  ; 70                  ;
+; Auto Carry Chains                                                ; On                  ; On                  ;
+; Auto Open-Drain Pins                                             ; On                  ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                 ; Off                 ;
+; Auto ROM Replacement                                             ; On                  ; On                  ;
+; Auto RAM Replacement                                             ; On                  ; On                  ;
+; Auto DSP Block Replacement                                       ; On                  ; On                  ;
+; Auto Shift Register Replacement                                  ; Auto                ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                ; Auto                ;
+; Auto Clock Enable Replacement                                    ; On                  ; On                  ;
+; Strict RAM Replacement                                           ; Off                 ; Off                 ;
+; Allow Synchronous Control Signals                                ; On                  ; On                  ;
+; Force Use of Synchronous Clear Signals                           ; Off                 ; Off                 ;
+; Auto RAM Block Balancing                                         ; On                  ; On                  ;
+; Auto RAM to Logic Cell Conversion                                ; Off                 ; Off                 ;
+; Auto Resource Sharing                                            ; Off                 ; Off                 ;
+; Allow Any RAM Size For Recognition                               ; Off                 ; Off                 ;
+; Allow Any ROM Size For Recognition                               ; Off                 ; Off                 ;
+; Allow Any Shift Register Size For Recognition                    ; Off                 ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing              ; On                  ; On                  ;
+; Ignore translate_off and synthesis_off directives                ; Off                 ; Off                 ;
+; Timing-Driven Synthesis                                          ; On                  ; On                  ;
+; Report Parameter Settings                                        ; On                  ; On                  ;
+; Report Source Assignments                                        ; On                  ; On                  ;
+; Report Connectivity Checks                                       ; On                  ; On                  ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                 ; Off                 ;
+; Synchronization Register Chain Length                            ; 2                   ; 2                   ;
+; Power Optimization During Synthesis                              ; Normal compilation  ; Normal compilation  ;
+; HDL message level                                                ; Level2              ; Level2              ;
+; Suppress Register Optimization Related Messages                  ; Off                 ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                 ; 100                 ;
+; Clock MUX Protection                                             ; On                  ; On                  ;
+; Auto Gated Clock Conversion                                      ; Off                 ; Off                 ;
+; Block Design Naming                                              ; Auto                ; Auto                ;
+; SDC constraint protection                                        ; Off                 ; Off                 ;
+; Synthesis Effort                                                 ; Auto                ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                  ; On                  ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                 ; Off                 ;
+; Analysis & Synthesis Message Level                               ; Medium              ; Medium              ;
+; Disable Register Merging Across Hierarchies                      ; Auto                ; Auto                ;
+; Resource Aware Inference For Block RAM                           ; On                  ; On                  ;
++------------------------------------------------------------------+---------------------+---------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; components.v                     ; yes             ; User Verilog HDL File        ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v               ;         ;
+; BCD.v                            ; yes             ; User Verilog HDL File        ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/BCD.v                      ;         ;
+; binary_to_bcd.v                  ; yes             ; User Verilog HDL File        ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v            ;         ;
+; proc_extension.v                 ; yes             ; User Verilog HDL File        ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v           ;         ;
+; proc_extension_inst.v            ; yes             ; User Verilog HDL File        ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension_inst.v      ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf                           ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc                          ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc                      ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                           ;         ;
+; db/lpm_divide_cnl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_cnl.tdf      ;         ;
+; db/sign_div_unsign_bnh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/sign_div_unsign_bnh.tdf ;         ;
+; db/alt_u_div_0le.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_0le.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/add_sub_u3c.tdf         ;         ;
+; db/lpm_divide_8nl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_8nl.tdf      ;         ;
+; db/sign_div_unsign_7nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/sign_div_unsign_7nh.tdf ;         ;
+; db/alt_u_div_oke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_oke.tdf       ;         ;
+; db/lpm_divide_ull.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_ull.tdf      ;         ;
+; db/sign_div_unsign_tlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/sign_div_unsign_tlh.tdf ;         ;
+; db/alt_u_div_4ie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_4ie.tdf       ;         ;
+; db/lpm_divide_rll.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_rll.tdf      ;         ;
+; db/sign_div_unsign_qlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/sign_div_unsign_qlh.tdf ;         ;
+; db/alt_u_div_uhe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_uhe.tdf       ;         ;
+; db/lpm_divide_otl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_otl.tdf      ;         ;
+; db/lpm_divide_rtl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_rtl.tdf      ;         ;
+; db/lpm_divide_5vl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_5vl.tdf      ;         ;
+; db/lpm_divide_9vl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_9vl.tdf      ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                             ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                          ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc                             ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc                             ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc                             ;         ;
+; db/mult_pgs.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/mult_pgs.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 1,535        ;
+;                                             ;              ;
+; Total combinational functions               ; 1407         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 608          ;
+;     -- 3 input functions                    ; 383          ;
+;     -- <=2 input functions                  ; 416          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 1138         ;
+;     -- arithmetic mode                      ; 269          ;
+;                                             ;              ;
+; Total registers                             ; 189          ;
+;     -- Dedicated logic registers            ; 189          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 70           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 2            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[1]~input ;
+; Maximum fan-out                             ; 189          ;
+; Total fan-out                               ; 5067         ;
+; Average fan-out                             ; 2.91         ;
++---------------------------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                      ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                           ; Entity Name           ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |proc_extension_inst                         ; 1407 (0)            ; 189 (0)                   ; 0           ; 0          ; 2            ; 0       ; 1         ; 70   ; 0            ; 0          ; |proc_extension_inst                                                                                                                                                          ; proc_extension_inst   ; work         ;
+;    |simple_proc_extension:u_processor|       ; 1407 (107)          ; 189 (0)                   ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor                                                                                                                        ; simple_proc_extension ; work         ;
+;       |ALU:alu|                              ; 152 (152)           ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|ALU:alu                                                                                                                ; ALU                   ; work         ;
+;          |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|ALU:alu|lpm_mult:Mult0                                                                                                 ; lpm_mult              ; work         ;
+;             |mult_pgs:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|ALU:alu|lpm_mult:Mult0|mult_pgs:auto_generated                                                                         ; mult_pgs              ; work         ;
+;       |BCD:hundreds_display|                 ; 20 (20)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|BCD:hundreds_display                                                                                                   ; BCD                   ; work         ;
+;       |BCD:ones_display|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|BCD:ones_display                                                                                                       ; BCD                   ; work         ;
+;       |BCD:ten_thousands_display|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|BCD:ten_thousands_display                                                                                              ; BCD                   ; work         ;
+;       |BCD:tens_display|                     ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|BCD:tens_display                                                                                                       ; BCD                   ; work         ;
+;       |BCD:thousands_display|                ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|BCD:thousands_display                                                                                                  ; BCD                   ; work         ;
+;       |BCD:tick_hex5|                        ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|BCD:tick_hex5                                                                                                          ; BCD                   ; work         ;
+;       |binary_to_bcd:b_to_bcd|               ; 763 (96)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd                                                                                                 ; binary_to_bcd         ; work         ;
+;          |lpm_divide:Div0|                   ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div0                                                                                 ; lpm_divide            ; work         ;
+;             |lpm_divide_9vl:auto_generated|  ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div0|lpm_divide_9vl:auto_generated                                                   ; lpm_divide_9vl        ; work         ;
+;                |sign_div_unsign_bnh:divider| ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div0|lpm_divide_9vl:auto_generated|sign_div_unsign_bnh:divider                       ; sign_div_unsign_bnh   ; work         ;
+;                   |alt_u_div_0le:divider|    ; 82 (82)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div0|lpm_divide_9vl:auto_generated|sign_div_unsign_bnh:divider|alt_u_div_0le:divider ; alt_u_div_0le         ; work         ;
+;          |lpm_divide:Div1|                   ; 124 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1                                                                                 ; lpm_divide            ; work         ;
+;             |lpm_divide_5vl:auto_generated|  ; 124 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1|lpm_divide_5vl:auto_generated                                                   ; lpm_divide_5vl        ; work         ;
+;                |sign_div_unsign_7nh:divider| ; 124 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1|lpm_divide_5vl:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh   ; work         ;
+;                   |alt_u_div_oke:divider|    ; 124 (124)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1|lpm_divide_5vl:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_oke:divider ; alt_u_div_oke         ; work         ;
+;          |lpm_divide:Div2|                   ; 70 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div2                                                                                 ; lpm_divide            ; work         ;
+;             |lpm_divide_rtl:auto_generated|  ; 70 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div2|lpm_divide_rtl:auto_generated                                                   ; lpm_divide_rtl        ; work         ;
+;                |sign_div_unsign_tlh:divider| ; 70 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div2|lpm_divide_rtl:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh   ; work         ;
+;                   |alt_u_div_4ie:divider|    ; 70 (70)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div2|lpm_divide_rtl:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_4ie:divider ; alt_u_div_4ie         ; work         ;
+;          |lpm_divide:Div3|                   ; 44 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div3                                                                                 ; lpm_divide            ; work         ;
+;             |lpm_divide_otl:auto_generated|  ; 44 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div3|lpm_divide_otl:auto_generated                                                   ; lpm_divide_otl        ; work         ;
+;                |sign_div_unsign_qlh:divider| ; 44 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div3|lpm_divide_otl:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh   ; work         ;
+;                   |alt_u_div_uhe:divider|    ; 44 (44)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div3|lpm_divide_otl:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider ; alt_u_div_uhe         ; work         ;
+;          |lpm_divide:Mod0|                   ; 97 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod0                                                                                 ; lpm_divide            ; work         ;
+;             |lpm_divide_cnl:auto_generated|  ; 97 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod0|lpm_divide_cnl:auto_generated                                                   ; lpm_divide_cnl        ; work         ;
+;                |sign_div_unsign_bnh:divider| ; 97 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod0|lpm_divide_cnl:auto_generated|sign_div_unsign_bnh:divider                       ; sign_div_unsign_bnh   ; work         ;
+;                   |alt_u_div_0le:divider|    ; 97 (97)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod0|lpm_divide_cnl:auto_generated|sign_div_unsign_bnh:divider|alt_u_div_0le:divider ; alt_u_div_0le         ; work         ;
+;          |lpm_divide:Mod1|                   ; 133 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1                                                                                 ; lpm_divide            ; work         ;
+;             |lpm_divide_8nl:auto_generated|  ; 133 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1|lpm_divide_8nl:auto_generated                                                   ; lpm_divide_8nl        ; work         ;
+;                |sign_div_unsign_7nh:divider| ; 133 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1|lpm_divide_8nl:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh   ; work         ;
+;                   |alt_u_div_oke:divider|    ; 133 (133)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1|lpm_divide_8nl:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_oke:divider ; alt_u_div_oke         ; work         ;
+;          |lpm_divide:Mod2|                   ; 73 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod2                                                                                 ; lpm_divide            ; work         ;
+;             |lpm_divide_ull:auto_generated|  ; 73 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod2|lpm_divide_ull:auto_generated                                                   ; lpm_divide_ull        ; work         ;
+;                |sign_div_unsign_tlh:divider| ; 73 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod2|lpm_divide_ull:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh   ; work         ;
+;                   |alt_u_div_4ie:divider|    ; 73 (73)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod2|lpm_divide_ull:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_4ie:divider ; alt_u_div_4ie         ; work         ;
+;          |lpm_divide:Mod3|                   ; 44 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod3                                                                                 ; lpm_divide            ; work         ;
+;             |lpm_divide_rll:auto_generated|  ; 44 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod3|lpm_divide_rll:auto_generated                                                   ; lpm_divide_rll        ; work         ;
+;                |sign_div_unsign_qlh:divider| ; 44 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod3|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh   ; work         ;
+;                   |alt_u_div_uhe:divider|    ; 44 (44)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod3|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider ; alt_u_div_uhe         ; work         ;
+;       |multiplexer:mux|                      ; 114 (114)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|multiplexer:mux                                                                                                        ; multiplexer           ; work         ;
+;       |register_n:reg0|                      ; 18 (18)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg0                                                                                                        ; register_n            ; work         ;
+;       |register_n:reg1|                      ; 3 (3)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg1                                                                                                        ; register_n            ; work         ;
+;       |register_n:reg2|                      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg2                                                                                                        ; register_n            ; work         ;
+;       |register_n:reg3|                      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg3                                                                                                        ; register_n            ; work         ;
+;       |register_n:reg4|                      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg4                                                                                                        ; register_n            ; work         ;
+;       |register_n:reg5|                      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg5                                                                                                        ; register_n            ; work         ;
+;       |register_n:reg6|                      ; 2 (2)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg6                                                                                                        ; register_n            ; work         ;
+;       |register_n:reg7|                      ; 2 (2)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg7                                                                                                        ; register_n            ; work         ;
+;       |register_n:regA|                      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:regA                                                                                                        ; register_n            ; work         ;
+;       |register_n:regDisp|                   ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:regDisp                                                                                                     ; register_n            ; work         ;
+;       |register_n:regG|                      ; 129 (129)           ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:regG                                                                                                        ; register_n            ; work         ;
+;       |register_n:reg_IR|                    ; 10 (10)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg_IR                                                                                                      ; register_n            ; work         ;
+;       |tick_FSM:tick_fsm|                    ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_extension_inst|simple_proc_extension:u_processor|tick_FSM:tick_fsm                                                                                                      ; tick_FSM              ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 1           ;
+; Unsigned Embedded Multipliers         ; 0           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                               ;
++-----------------------------------------------------+----------------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                                ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------------------------------+------------------------+
+; simple_proc_extension:u_processor|mux_sel[3]        ; simple_proc_extension:u_processor|Mux26            ; yes                    ;
+; simple_proc_extension:u_processor|mux_sel[1]        ; simple_proc_extension:u_processor|Mux26            ; yes                    ;
+; simple_proc_extension:u_processor|mux_sel[2]        ; simple_proc_extension:u_processor|Mux26            ; yes                    ;
+; simple_proc_extension:u_processor|mux_sel[0]        ; simple_proc_extension:u_processor|Mux26            ; yes                    ;
+; simple_proc_extension:u_processor|immediate_reg[0]  ; simple_proc_extension:u_processor|immediate_reg[2] ; yes                    ;
+; simple_proc_extension:u_processor|immediate_reg[1]  ; simple_proc_extension:u_processor|immediate_reg[2] ; yes                    ;
+; simple_proc_extension:u_processor|immediate_reg[2]  ; simple_proc_extension:u_processor|immediate_reg[2] ; yes                    ;
+; simple_proc_extension:u_processor|immediate_reg[3]  ; simple_proc_extension:u_processor|immediate_reg[2] ; yes                    ;
+; simple_proc_extension:u_processor|immediate_reg[4]  ; simple_proc_extension:u_processor|immediate_reg[2] ; yes                    ;
+; simple_proc_extension:u_processor|immediate_reg[5]  ; simple_proc_extension:u_processor|immediate_reg[2] ; yes                    ;
+; simple_proc_extension:u_processor|immediate_reg[6]  ; simple_proc_extension:u_processor|immediate_reg[2] ; yes                    ;
+; simple_proc_extension:u_processor|immediate_reg[7]  ; simple_proc_extension:u_processor|immediate_reg[2] ; yes                    ;
+; simple_proc_extension:u_processor|immediate_reg[8]  ; simple_proc_extension:u_processor|immediate_reg[2] ; yes                    ;
+; simple_proc_extension:u_processor|dp_enable         ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|tick_bcd[1]       ; simple_proc_extension:u_processor|Mux27            ; yes                    ;
+; simple_proc_extension:u_processor|tick_bcd[0]       ; simple_proc_extension:u_processor|Mux27            ; yes                    ;
+; simple_proc_extension:u_processor|tick_bcd[2]       ; simple_proc_extension:u_processor|Mux27            ; yes                    ;
+; simple_proc_extension:u_processor|opcode[1]         ; simple_proc_extension:u_processor|Decoder69        ; yes                    ;
+; simple_proc_extension:u_processor|opcode[0]         ; simple_proc_extension:u_processor|Decoder69        ; yes                    ;
+; simple_proc_extension:u_processor|opcode[2]         ; simple_proc_extension:u_processor|Decoder69        ; yes                    ;
+; simple_proc_extension:u_processor|reg_y[1]          ; simple_proc_extension:u_processor|Decoder69        ; yes                    ;
+; simple_proc_extension:u_processor|reg_x[1]          ; simple_proc_extension:u_processor|Decoder69        ; yes                    ;
+; simple_proc_extension:u_processor|reg_y[2]          ; simple_proc_extension:u_processor|Decoder69        ; yes                    ;
+; simple_proc_extension:u_processor|reg_x[2]          ; simple_proc_extension:u_processor|Decoder69        ; yes                    ;
+; simple_proc_extension:u_processor|reg_x[0]          ; simple_proc_extension:u_processor|Decoder69        ; yes                    ;
+; simple_proc_extension:u_processor|reg_y[0]          ; simple_proc_extension:u_processor|Decoder69        ; yes                    ;
+; simple_proc_extension:u_processor|alu_op_reg[0]     ; simple_proc_extension:u_processor|alu_op_reg[0]    ; yes                    ;
+; simple_proc_extension:u_processor|alu_op_reg[2]     ; simple_proc_extension:u_processor|alu_op_reg[0]    ; yes                    ;
+; simple_proc_extension:u_processor|alu_op_reg[1]     ; simple_proc_extension:u_processor|alu_op_reg[0]    ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[3]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[14]       ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[15]       ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[13]       ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[11]       ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[12]       ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[8]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[9]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[10]       ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[4]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[5]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[6]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[7]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[2]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[1]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|abs_bus[0]        ; simple_proc_extension:u_processor|abs_bus[15]      ; yes                    ;
+; simple_proc_extension:u_processor|RI_enable         ; simple_proc_extension:u_processor|WideOr15         ; yes                    ;
+; Number of user-specified and inferred latches = 46  ;                                                    ;                        ;
++-----------------------------------------------------+----------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 189   ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 173   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg0|Q[14]     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg1|Q[14]     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg2|Q[0]      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg3|Q[12]     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg4|Q[0]      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg5|Q[7]      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg6|Q[3]      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg7|Q[14]     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[2] ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:reg_IR|Q[3]    ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:regG|Q[8]      ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:regG|Q[5]      ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:regG|Q[12]     ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:regG|Q[2]      ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 16 LEs               ; 10 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:regG|Q[0]      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_extension_inst|simple_proc_extension:u_processor|register_n:regA|Q[9]      ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 56 LEs               ; 24 LEs                 ; No         ; |proc_extension_inst|simple_proc_extension:u_processor|multiplexer:mux|Mux15     ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 56 LEs               ; 8 LEs                  ; No         ; |proc_extension_inst|simple_proc_extension:u_processor|multiplexer:mux|Mux7      ;
+; 24:1               ; 8 bits    ; 128 LEs       ; 8 LEs                ; 120 LEs                ; No         ; |proc_extension_inst|simple_proc_extension:u_processor|Selector5                 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; No         ; |proc_extension_inst|simple_proc_extension:u_processor|Mux16                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                        ;
+; SEL_R0         ; 0000  ; Unsigned Binary                                       ;
+; SEL_R1         ; 0001  ; Unsigned Binary                                       ;
+; SEL_R2         ; 0010  ; Unsigned Binary                                       ;
+; SEL_R3         ; 0011  ; Unsigned Binary                                       ;
+; SEL_R4         ; 0100  ; Unsigned Binary                                       ;
+; SEL_R5         ; 0101  ; Unsigned Binary                                       ;
+; SEL_R6         ; 0110  ; Unsigned Binary                                       ;
+; SEL_R7         ; 0111  ; Unsigned Binary                                       ;
+; SEL_IMMEDIATE  ; 1000  ; Unsigned Binary                                       ;
+; SEL_G          ; 1001  ; Unsigned Binary                                       ;
+; ena_R0         ; 000   ; Unsigned Binary                                       ;
+; ena_R1         ; 001   ; Unsigned Binary                                       ;
+; ena_R2         ; 010   ; Unsigned Binary                                       ;
+; ena_R3         ; 011   ; Unsigned Binary                                       ;
+; ena_R4         ; 100   ; Unsigned Binary                                       ;
+; ena_R5         ; 101   ; Unsigned Binary                                       ;
+; ena_R6         ; 110   ; Unsigned Binary                                       ;
+; ena_R7         ; 111   ; Unsigned Binary                                       ;
+; DISP_OP        ; 000   ; Unsigned Binary                                       ;
+; ADD_OP         ; 001   ; Unsigned Binary                                       ;
+; ADDI_OP        ; 010   ; Unsigned Binary                                       ;
+; SUB_OP         ; 011   ; Unsigned Binary                                       ;
+; MUL_OP         ; 100   ; Unsigned Binary                                       ;
+; SSI_OP         ; 101   ; Unsigned Binary                                       ;
+; MOVI_OP        ; 111   ; Unsigned Binary                                       ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg_IR ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; N              ; 9     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg0 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg1 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg2 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg3 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg4 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg5 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg6 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:reg7 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:regA ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:regG ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|register_n:regDisp ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc_extension:u_processor|tick_FSM:tick_fsm ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; TICK1          ; 0001  ; Unsigned Binary                                                         ;
+; TICK2          ; 0010  ; Unsigned Binary                                                         ;
+; TICK3          ; 0100  ; Unsigned Binary                                                         ;
+; TICK4          ; 1000  ; Unsigned Binary                                                         ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                                         ;
+; LPM_WIDTHD             ; 14             ; Untyped                                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_cnl ; Untyped                                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                  ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1 ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                                         ;
+; LPM_WIDTHD             ; 10             ; Untyped                                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_8nl ; Untyped                                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                  ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod2 ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                                         ;
+; LPM_WIDTHD             ; 7              ; Untyped                                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_ull ; Untyped                                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                  ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod3 ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_rll ; Untyped                                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                  ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div3 ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_otl ; Untyped                                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                  ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div2 ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                                         ;
+; LPM_WIDTHD             ; 7              ; Untyped                                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_rtl ; Untyped                                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                  ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1 ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                                         ;
+; LPM_WIDTHD             ; 10             ; Untyped                                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_5vl ; Untyped                                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                  ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                                         ;
+; LPM_WIDTHD             ; 14             ; Untyped                                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_9vl ; Untyped                                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                  ;
++------------------------+----------------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc_extension:u_processor|ALU:alu|lpm_mult:Mult0 ;
++------------------------------------------------+----------+-----------------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                          ;
++------------------------------------------------+----------+-----------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                                ;
+; LPM_WIDTHA                                     ; 16       ; Untyped                                       ;
+; LPM_WIDTHB                                     ; 16       ; Untyped                                       ;
+; LPM_WIDTHP                                     ; 32       ; Untyped                                       ;
+; LPM_WIDTHR                                     ; 32       ; Untyped                                       ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                       ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped                                       ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                       ;
+; LATENCY                                        ; 0        ; Untyped                                       ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                       ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                       ;
+; USE_EAB                                        ; OFF      ; Untyped                                       ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                       ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                       ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                       ;
+; CBXI_PARAMETER                                 ; mult_pgs ; Untyped                                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                       ;
++------------------------------------------------+----------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                   ;
++---------------------------------------+----------------------------------------------------------+
+; Name                                  ; Value                                                    ;
++---------------------------------------+----------------------------------------------------------+
+; Number of entity instances            ; 1                                                        ;
+; Entity Instance                       ; simple_proc_extension:u_processor|ALU:alu|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                                                       ;
+;     -- LPM_WIDTHB                     ; 16                                                       ;
+;     -- LPM_WIDTHP                     ; 32                                                       ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                   ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                       ;
+;     -- USE_EAB                        ; OFF                                                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                       ;
++---------------------------------------+----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_proc_extension:u_processor|BCD:tick_hex5" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_proc_extension:u_processor|register_n:regDisp" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; r_in ; Input ; Info     ; Stuck at VCC                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_proc_extension:u_processor"                                                                              ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; bus[15..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; R0          ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; R1          ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; R2          ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; R3          ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; R4          ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; R5          ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; R6          ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; R7          ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; dp          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 70                          ;
+; cycloneiii_ff         ; 189                         ;
+;     ENA               ; 160                         ;
+;     ENA SCLR          ; 8                           ;
+;     ENA SCLR SLD      ; 4                           ;
+;     ENA SLD           ; 1                           ;
+;     plain             ; 16                          ;
+; cycloneiii_lcell_comb ; 1456                        ;
+;     arith             ; 269                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 50                          ;
+;         3 data inputs ; 213                         ;
+;     normal            ; 1187                        ;
+;         0 data inputs ; 32                          ;
+;         1 data inputs ; 49                          ;
+;         2 data inputs ; 328                         ;
+;         3 data inputs ; 170                         ;
+;         4 data inputs ; 608                         ;
+; cycloneiii_mac_mult   ; 1                           ;
+; cycloneiii_mac_out    ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 49.20                       ;
+; Average LUT depth     ; 24.50                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu Oct 10 18:10:28 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ece2072_project_x72 -c ece2072_project_x72
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 5 design units, including 5 entities, in source file components.v
+    Info (12023): Found entity 1: sign_extend File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 9
+    Info (12023): Found entity 2: tick_FSM File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 25
+    Info (12023): Found entity 3: multiplexer File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 61
+    Info (12023): Found entity 4: ALU File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 98
+    Info (12023): Found entity 5: register_n File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 174
+Info (12021): Found 1 design units, including 1 entities, in source file sign_extend_tb.v
+    Info (12023): Found entity 1: sign_extend_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/sign_extend_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tick_fsm_tb.v
+    Info (12023): Found entity 1: tick_FSM_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/tick_FSM_tb.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexer_tb.v
+    Info (12023): Found entity 1: multiplexer_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/multiplexer_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.v
+    Info (12023): Found entity 1: ALU_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/ALU_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file register_n_tb.v
+    Info (12023): Found entity 1: register_n_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/register_n_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file proc.v
+    Info (12023): Found entity 1: simple_proc File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file bcd.v
+    Info (12023): Found entity 1: BCD File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/BCD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc_inst.v
+    Info (12023): Found entity 1: proc_inst File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_inst.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc_tb.v
+    Info (12023): Found entity 1: proc_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file binary_to_bcd.v
+    Info (12023): Found entity 1: binary_to_bcd File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc_extension.v
+    Info (12023): Found entity 1: simple_proc_extension File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file proc_extension_inst.v
+    Info (12023): Found entity 1: proc_extension_inst File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension_inst.v Line: 1
+Info (12127): Elaborating entity "proc_extension_inst" for the top level hierarchy
+Info (12128): Elaborating entity "simple_proc_extension" for hierarchy "simple_proc_extension:u_processor" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension_inst.v Line: 33
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(161): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 161
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(162): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 162
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(163): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 163
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(164): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 164
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(165): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 165
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(166): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 166
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(167): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 167
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(168): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 168
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(169): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 169
+Critical Warning (10237): Verilog HDL warning at proc_extension.v(170): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 170
+Warning (10270): Verilog HDL Case Statement warning at proc_extension.v(186): incomplete case statement has no default case item File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 186
+Warning (10270): Verilog HDL Case Statement warning at proc_extension.v(284): incomplete case statement has no default case item File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 284
+Warning (10270): Verilog HDL Case Statement warning at proc_extension.v(380): incomplete case statement has no default case item File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 380
+Warning (10270): Verilog HDL Case Statement warning at proc_extension.v(171): incomplete case statement has no default case item File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 171
+Info (10264): Verilog HDL Case Statement information at proc_extension.v(171): all case item expressions in this case statement are onehot File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 171
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "tick_bcd", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "mux_sel", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "alu_op_reg", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "RI_enable", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "immediate_reg", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "RD_enable", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "abs_bus", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "dp_enable", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "opcode", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "reg_x", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at proc_extension.v(159): inferring latch(es) for variable "reg_y", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (10034): Output port "dp" at proc_extension.v(16) has no driver File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 16
+Info (10041): Inferred latch for "reg_y[0]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "reg_y[1]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "reg_y[2]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "reg_x[0]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "reg_x[1]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "reg_x[2]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "opcode[0]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "opcode[1]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "opcode[2]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "dp_enable" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[0]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[1]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[2]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[3]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[4]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[5]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[6]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[7]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[8]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[9]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[10]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[11]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[12]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[13]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[14]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "abs_bus[15]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "RD_enable" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "immediate_reg[0]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "immediate_reg[1]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "immediate_reg[2]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "immediate_reg[3]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "immediate_reg[4]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "immediate_reg[5]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "immediate_reg[6]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "immediate_reg[7]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "immediate_reg[8]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "RI_enable" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "alu_op_reg[0]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "alu_op_reg[1]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "alu_op_reg[2]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "mux_sel[0]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "mux_sel[1]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "mux_sel[2]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "mux_sel[3]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "tick_bcd[0]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "tick_bcd[1]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "tick_bcd[2]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (10041): Inferred latch for "tick_bcd[3]" at proc_extension.v(159) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Info (12128): Elaborating entity "sign_extend" for hierarchy "simple_proc_extension:u_processor|sign_extend:s_ext" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 81
+Info (12128): Elaborating entity "register_n" for hierarchy "simple_proc_extension:u_processor|register_n:reg_IR" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 85
+Info (12128): Elaborating entity "register_n" for hierarchy "simple_proc_extension:u_processor|register_n:reg0" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 87
+Info (12128): Elaborating entity "multiplexer" for hierarchy "simple_proc_extension:u_processor|multiplexer:mux" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 108
+Info (12128): Elaborating entity "ALU" for hierarchy "simple_proc_extension:u_processor|ALU:alu" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at components.v(110): inferring latch(es) for variable "mult_result", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 110
+Info (12128): Elaborating entity "tick_FSM" for hierarchy "simple_proc_extension:u_processor|tick_FSM:tick_fsm" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 114
+Info (10264): Verilog HDL Case Statement information at components.v(50): all case item expressions in this case statement are onehot File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 50
+Info (12128): Elaborating entity "binary_to_bcd" for hierarchy "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 119
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(24): truncated value with size 16 to match size of target (4) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 24
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(30): truncated value with size 16 to match size of target (4) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 30
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(36): truncated value with size 16 to match size of target (4) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 36
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(42): truncated value with size 16 to match size of target (4) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 42
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(47): truncated value with size 16 to match size of target (4) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 47
+Info (12128): Elaborating entity "BCD" for hierarchy "simple_proc_extension:u_processor|BCD:ones_display" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 126
+Info (278001): Inferred 9 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|Mod0" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|Mod1" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 31
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|Mod2" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 37
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|Mod3" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 43
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|Div3" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 42
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|Div2" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 36
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|Div1" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 30
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|Div0" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "simple_proc_extension:u_processor|ALU:alu|Mult0" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 114
+Info (12130): Elaborated megafunction instantiation "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod0" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 25
+Info (12133): Instantiated megafunction "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod0" with the following parameter: File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_cnl.tdf
+    Info (12023): Found entity 1: lpm_divide_cnl File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_cnl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bnh File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/sign_div_unsign_bnh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0le.tdf
+    Info (12023): Found entity 1: alt_u_div_0le File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_0le.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/add_sub_u3c.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 31
+Info (12133): Instantiated megafunction "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1" with the following parameter: File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 31
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_8nl.tdf
+    Info (12023): Found entity 1: lpm_divide_8nl File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_8nl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7nh File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/sign_div_unsign_7nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_oke.tdf
+    Info (12023): Found entity 1: alt_u_div_oke File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_oke.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod2" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 37
+Info (12133): Instantiated megafunction "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod2" with the following parameter: File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 37
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ull.tdf
+    Info (12023): Found entity 1: lpm_divide_ull File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_ull.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_tlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_tlh File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/sign_div_unsign_tlh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_4ie.tdf
+    Info (12023): Found entity 1: alt_u_div_4ie File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_4ie.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod3" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 43
+Info (12133): Instantiated megafunction "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod3" with the following parameter: File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 43
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_rll.tdf
+    Info (12023): Found entity 1: lpm_divide_rll File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_rll.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_qlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_qlh File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/sign_div_unsign_qlh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uhe.tdf
+    Info (12023): Found entity 1: alt_u_div_uhe File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_uhe.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div3" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 42
+Info (12133): Instantiated megafunction "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div3" with the following parameter: File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 42
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_otl.tdf
+    Info (12023): Found entity 1: lpm_divide_otl File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_otl.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div2" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 36
+Info (12133): Instantiated megafunction "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div2" with the following parameter: File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 36
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_rtl.tdf
+    Info (12023): Found entity 1: lpm_divide_rtl File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_rtl.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 30
+Info (12133): Instantiated megafunction "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1" with the following parameter: File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 30
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_5vl.tdf
+    Info (12023): Found entity 1: lpm_divide_5vl File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_5vl.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div0" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 24
+Info (12133): Instantiated megafunction "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div0" with the following parameter: File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 24
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_9vl.tdf
+    Info (12023): Found entity 1: lpm_divide_9vl File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/lpm_divide_9vl.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "simple_proc_extension:u_processor|ALU:alu|lpm_mult:Mult0" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 114
+Info (12133): Instantiated megafunction "simple_proc_extension:u_processor|ALU:alu|lpm_mult:Mult0" with the following parameter: File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 114
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_pgs.tdf
+    Info (12023): Found entity 1: mult_pgs File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/mult_pgs.tdf Line: 28
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch simple_proc_extension:u_processor|mux_sel[3] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[2] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc_extension:u_processor|mux_sel[1] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[3] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc_extension:u_processor|mux_sel[2] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[3] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc_extension:u_processor|mux_sel[0] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[3] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc_extension:u_processor|tick_bcd[1] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[1] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc_extension:u_processor|tick_bcd[0] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[2] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc_extension:u_processor|tick_bcd[2] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[1] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc_extension:u_processor|alu_op_reg[0] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|opcode[1] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (13012): Latch simple_proc_extension:u_processor|alu_op_reg[2] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|opcode[2] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (13012): Latch simple_proc_extension:u_processor|alu_op_reg[1] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|opcode[1] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 159
+Warning (13012): Latch simple_proc_extension:u_processor|RI_enable has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 28
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc_extension:u_processor|tick_FSM:tick_fsm|tick[1] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1|lpm_divide_8nl:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_oke:divider|add_sub_11_result_int[2]~18" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_oke.tdf Line: 41
+    Info (17048): Logic cell "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod1|lpm_divide_8nl:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_oke:divider|add_sub_11_result_int[1]~20" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_oke.tdf Line: 41
+    Info (17048): Logic cell "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Mod2|lpm_divide_ull:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_4ie:divider|add_sub_12_result_int[1]~14" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_4ie.tdf Line: 46
+    Info (17048): Logic cell "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div2|lpm_divide_rtl:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_4ie:divider|add_sub_12_result_int[1]~14" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_4ie.tdf Line: 46
+    Info (17048): Logic cell "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1|lpm_divide_5vl:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_oke:divider|add_sub_11_result_int[2]~18" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_oke.tdf Line: 41
+    Info (17048): Logic cell "simple_proc_extension:u_processor|binary_to_bcd:b_to_bcd|lpm_divide:Div1|lpm_divide_5vl:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_oke:divider|add_sub_11_result_int[1]~20" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/db/alt_u_div_oke.tdf Line: 41
+Info (144001): Generated suppressed messages file C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/output_files/ece2072_project_x72.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1629 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 1557 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 56 warnings
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Thu Oct 10 18:10:42 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:09
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/output_files/ece2072_project_x72.map.smsg.
+
+

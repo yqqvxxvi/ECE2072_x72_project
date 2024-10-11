@@ -1,0 +1,15 @@
+module BCD(
+	input A,B,C,D,
+	input dp_enable,
+	output a,b,c,d,e,f,g, dp
+	);
+	
+	assign a = ~((A & ~B & ~C) | (~A & B & D) | (A & ~D) | (~A & C) | (B & C) | (~B & ~D)); // Segment a
+	assign b = ~((~A & ~C & ~D) | (~A & C & D) | (A & ~C & D) | (~A & ~B) | (~B & ~D)); // Segment b
+	assign c = ~((~A & ~C) | (~A & D) | (~C & D) | (~A & B) |(A & ~B)); // Segment c
+	assign d = ~((~A & ~B & ~D) | (~B & C & D) | (B & ~C & D) | (B & C & ~D) | (A & ~C)); // Segment d
+	assign e = ~((~B & ~D) | (C & ~D) | (A & C) | (A & B)); // Segment e
+	assign f = ~((~A & B & ~C) | (~C & ~D) | (B & ~D) | (A & ~B) | (A & C)); // Segment f
+	assign g = ~((~A & B & ~C) | (~B & C) | (C &  ~D) | (A & ~B) | (A & D)); // Segment g
+	assign dp = ~(dp_enable);
+endmodule
