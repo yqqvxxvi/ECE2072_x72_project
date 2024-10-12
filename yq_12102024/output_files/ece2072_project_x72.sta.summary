@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'KEY[1]'
+Slack : -9.460
+TNS   : -1281.162
+
+Type  : Slow 1200mV 85C Model Setup 'simple_proc:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -4.904
+TNS   : -22.379
+
+Type  : Slow 1200mV 85C Model Hold 'simple_proc:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -0.708
+TNS   : -0.889
+
+Type  : Slow 1200mV 85C Model Hold 'KEY[1]'
+Slack : 0.393
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -245.719
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'simple_proc:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : 0.418
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'KEY[1]'
+Slack : -8.637
+TNS   : -1167.478
+
+Type  : Slow 1200mV 0C Model Setup 'simple_proc:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -4.557
+TNS   : -20.998
+
+Type  : Slow 1200mV 0C Model Hold 'simple_proc:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -0.532
+TNS   : -0.595
+
+Type  : Slow 1200mV 0C Model Hold 'KEY[1]'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -245.719
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'simple_proc:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : 0.347
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'KEY[1]'
+Slack : -3.410
+TNS   : -458.631
+
+Type  : Fast 1200mV 0C Model Setup 'simple_proc:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -1.915
+TNS   : -5.982
+
+Type  : Fast 1200mV 0C Model Hold 'simple_proc:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : -0.241
+TNS   : -0.241
+
+Type  : Fast 1200mV 0C Model Hold 'KEY[1]'
+Slack : 0.169
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -218.265
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'simple_proc:u_processor|tick_FSM:tick_fsm|tick[0]'
+Slack : 0.317
+TNS   : 0.000
+
+------------------------------------------------------------

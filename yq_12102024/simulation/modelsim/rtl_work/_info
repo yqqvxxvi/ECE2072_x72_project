@@ -1,0 +1,189 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/simulation/modelsim
+vALU
+Z1 !s110 1728406306
+!i10b 1
+!s100 XX4kOBdXW[XNLWBm7b[[e0
+I46BHWnhFd]2g?=e876@<A0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1728405816
+Z4 8C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v
+Z5 FC:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v
+L0 98
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1728406306.000000
+Z8 !s107 C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project|C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work +incdir+C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project
+Z12 tCvgOpt 0
+n@a@l@u
+vBCD
+R1
+!i10b 1
+!s100 e_LD2WAX8CIlJ8kV:UVZT2
+IgDh@SNalbc4a:63`S;[SB3
+R2
+R0
+w1728149848
+8C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/BCD.v
+FC:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/BCD.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/BCD.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project|C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/BCD.v|
+!i113 1
+R10
+R11
+R12
+n@b@c@d
+vmultiplexer
+R1
+!i10b 1
+!s100 Ak1Mom;5=mjGhbI;^zPhU0
+I8FBUkI?^S`]M?c2ZCD5Rf2
+R2
+R0
+R3
+R4
+R5
+L0 61
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vproc_tb
+R1
+!i10b 1
+!s100 i2jH>=[J4<8Kzc75zm1Um1
+IdFHEN23AJ8>hz0QiI9g;d0
+R2
+R0
+w1728406283
+8C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_tb.v
+FC:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_tb.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project|C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_tb.v|
+!i113 1
+R10
+R11
+R12
+vregister_n
+R1
+!i10b 1
+!s100 LTb8C]XEDofZze[7Y5CMR0
+IcLaXcJ5lRdEFLb@VS5jNE2
+R2
+R0
+R3
+R4
+R5
+L0 174
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsign_extend
+R1
+!i10b 1
+!s100 aJ4M@@;fPHgSCh6k]7?K93
+Ih<R`28HQ5SoB:n<mD_JD]1
+R2
+R0
+R3
+R4
+R5
+L0 9
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsimple_proc
+R1
+!i10b 1
+!s100 AzUQ9B^d7ngL6A>]HU>2B2
+Ic>PD6T7h^feizb[U9f9f:0
+R2
+R0
+w1728387491
+8C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v
+FC:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v
+L0 8
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project|C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v|
+!i113 1
+R10
+R11
+R12
+vtick_FSM
+R1
+!i10b 1
+!s100 T9AMcNF:Q`TZJ?MIjHC:I2
+Iz=HMSYX`?1kQ`PlP9giUL1
+R2
+R0
+R3
+R4
+R5
+L0 25
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+ntick_@f@s@m

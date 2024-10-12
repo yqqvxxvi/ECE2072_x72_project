@@ -1,0 +1,40 @@
+module binary_to_bcd(
+    input [15:0] binary,    // 16-bit binary input
+    output reg [3:0] ten_thousands,  // BCD for ten-thousands place
+    output reg [3:0] thousands,      // BCD for thousands place
+    output reg [3:0] hundreds,       // BCD for hundreds place
+    output reg [3:0] tens,           // BCD for tens place
+    output reg [3:0] ones            // BCD for ones place
+);
+
+    integer i;
+    reg [31:0] shift_reg;   // Shift register for BCD conversion (5 BCD digits + 16 bits for binary)
+
+    always @(binary) begin
+        // Initialize the shift register with the binary value and zeros for BCD digits
+        shift_reg = {16'b0, binary};  // 16 bits for binary input, 16 bits for BCD digits
+
+        // Perform the shift-and-add-3 algorithm for binary to BCD conversion
+        for (i = 0; i < 16; i = i + 1) begin
+            // Check each BCD digit (ten-thousands, thousands, hundreds, tens, ones) for >= 5 and add 3 if necessary
+            if (shift_reg[19:16] >= 5)
+                shift_reg[19:16] = shift_reg[19:16] + 3;
+            if (shift_reg[23:20] >= 5)
+                shift_reg[23:20] = shift_reg[23:20] + 3;
+            if (shift_reg[27:24] >= 5)
+                shift_reg[27:24] = shift_reg[27:24] + 3;
+            if (shift_reg[31:28] >= 5)
+                shift_reg[31:28] = shift_reg[31:28] + 3;
+
+            // Shift the entire shift register left by 1 bit
+            shift_reg = shift_reg << 1;
+        end
+
+        // Assign the BCD digits
+        ten_thousands = shift_reg[31:28];
+        thousands     = shift_reg[27:24];
+        hundreds      = shift_reg[23:20];
+        tens          = shift_reg[19:16];
+        ones          = shift_reg[15:12];
+    end
+endmodule

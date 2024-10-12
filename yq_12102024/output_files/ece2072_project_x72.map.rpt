@@ -1,0 +1,705 @@
+Analysis & Synthesis report for ece2072_project_x72
+Sat Oct 12 11:41:00 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: simple_proc:u_processor
+ 12. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg_IR
+ 13. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg0
+ 14. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg1
+ 15. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg2
+ 16. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg3
+ 17. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg4
+ 18. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg5
+ 19. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg6
+ 20. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg7
+ 21. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:regA
+ 22. Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:regG
+ 23. Parameter Settings for User Entity Instance: simple_proc:u_processor|tick_FSM:tick_fsm
+ 24. Port Connectivity Checks: "simple_proc:u_processor|BCD:tick_hex5"
+ 25. Port Connectivity Checks: "simple_proc:u_processor|tick_FSM:tick_fsm"
+ 26. Port Connectivity Checks: "simple_proc:u_processor|ALU:alu"
+ 27. Port Connectivity Checks: "simple_proc:u_processor"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+ 31. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Oct 12 11:41:00 2024       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; ece2072_project_x72                         ;
+; Top-level Entity Name              ; proc_inst                                   ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 388                                         ;
+;     Total combinational functions  ; 260                                         ;
+;     Dedicated logic registers      ; 173                                         ;
+; Total registers                    ; 173                                         ;
+; Total pins                         ; 28                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                               ;
++------------------------------------------------------------------+--------------------+---------------------+
+; Option                                                           ; Setting            ; Default Value       ;
++------------------------------------------------------------------+--------------------+---------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                     ;
+; Top-level entity name                                            ; proc_inst          ; ece2072_project_x72 ;
+; Family name                                                      ; MAX 10             ; Cyclone V           ;
+; Use smart compilation                                            ; Off                ; Off                 ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                  ;
+; Enable compact report table                                      ; Off                ; Off                 ;
+; Restructure Multiplexers                                         ; Auto               ; Auto                ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                 ;
+; Preserve fewer node names                                        ; On                 ; On                  ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable              ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001        ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993           ;
+; State Machine Processing                                         ; Auto               ; Auto                ;
+; Safe State Machine                                               ; Off                ; Off                 ;
+; Extract Verilog State Machines                                   ; On                 ; On                  ;
+; Extract VHDL State Machines                                      ; On                 ; On                  ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                 ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000                ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                  ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                  ;
+; Parallel Synthesis                                               ; On                 ; On                  ;
+; DSP Block Balancing                                              ; Auto               ; Auto                ;
+; NOT Gate Push-Back                                               ; On                 ; On                  ;
+; Power-Up Don't Care                                              ; On                 ; On                  ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                 ;
+; Remove Duplicate Registers                                       ; On                 ; On                  ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                 ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                 ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                 ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                 ;
+; Ignore SOFT Buffers                                              ; On                 ; On                  ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                 ;
+; Optimization Technique                                           ; Balanced           ; Balanced            ;
+; Carry Chain Length                                               ; 70                 ; 70                  ;
+; Auto Carry Chains                                                ; On                 ; On                  ;
+; Auto Open-Drain Pins                                             ; On                 ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                 ;
+; Auto ROM Replacement                                             ; On                 ; On                  ;
+; Auto RAM Replacement                                             ; On                 ; On                  ;
+; Auto DSP Block Replacement                                       ; On                 ; On                  ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto                ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                  ;
+; Strict RAM Replacement                                           ; Off                ; Off                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                  ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                 ;
+; Auto RAM Block Balancing                                         ; On                 ; On                  ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                 ;
+; Auto Resource Sharing                                            ; Off                ; Off                 ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                 ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                 ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                  ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                 ;
+; Timing-Driven Synthesis                                          ; On                 ; On                  ;
+; Report Parameter Settings                                        ; On                 ; On                  ;
+; Report Source Assignments                                        ; On                 ; On                  ;
+; Report Connectivity Checks                                       ; On                 ; On                  ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                 ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                   ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation  ;
+; HDL message level                                                ; Level2             ; Level2              ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                 ;
+; Clock MUX Protection                                             ; On                 ; On                  ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                 ;
+; Block Design Naming                                              ; Auto               ; Auto                ;
+; SDC constraint protection                                        ; Off                ; Off                 ;
+; Synthesis Effort                                                 ; Auto               ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                  ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium              ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto                ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                  ;
++------------------------------------------------------------------+--------------------+---------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------+---------+
+; components.v                     ; yes             ; User Verilog HDL File  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v ;         ;
+; proc.v                           ; yes             ; User Verilog HDL File  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v       ;         ;
+; BCD.v                            ; yes             ; User Verilog HDL File  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/BCD.v        ;         ;
+; proc_inst.v                      ; yes             ; User Verilog HDL File  ; C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_inst.v  ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 388          ;
+;                                             ;              ;
+; Total combinational functions               ; 260          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 143          ;
+;     -- 3 input functions                    ; 68           ;
+;     -- <=2 input functions                  ; 49           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 245          ;
+;     -- arithmetic mode                      ; 15           ;
+;                                             ;              ;
+; Total registers                             ; 173          ;
+;     -- Dedicated logic registers            ; 173          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 28           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[1]~input ;
+; Maximum fan-out                             ; 173          ;
+; Total fan-out                               ; 1451         ;
+; Average fan-out                             ; 2.97         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                  ; Entity Name ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------+-------------+--------------+
+; |proc_inst                   ; 260 (0)             ; 173 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 28   ; 0            ; 0          ; |proc_inst                                           ; proc_inst   ; work         ;
+;    |simple_proc:u_processor| ; 260 (58)            ; 173 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor                   ; simple_proc ; work         ;
+;       |ALU:alu|              ; 34 (34)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|ALU:alu           ; ALU         ; work         ;
+;       |BCD:tick_hex5|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|BCD:tick_hex5     ; BCD         ; work         ;
+;       |multiplexer:mux|      ; 117 (117)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|multiplexer:mux   ; multiplexer ; work         ;
+;       |register_n:reg0|      ; 17 (17)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:reg0   ; register_n  ; work         ;
+;       |register_n:reg1|      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:reg1   ; register_n  ; work         ;
+;       |register_n:reg2|      ; 2 (2)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:reg2   ; register_n  ; work         ;
+;       |register_n:reg3|      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:reg3   ; register_n  ; work         ;
+;       |register_n:reg4|      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:reg4   ; register_n  ; work         ;
+;       |register_n:reg5|      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:reg5   ; register_n  ; work         ;
+;       |register_n:reg6|      ; 2 (2)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:reg6   ; register_n  ; work         ;
+;       |register_n:reg7|      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:reg7   ; register_n  ; work         ;
+;       |register_n:regA|      ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:regA   ; register_n  ; work         ;
+;       |register_n:regG|      ; 3 (3)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:regG   ; register_n  ; work         ;
+;       |register_n:reg_IR|    ; 10 (10)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|register_n:reg_IR ; register_n  ; work         ;
+;       |tick_FSM:tick_fsm|    ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |proc_inst|simple_proc:u_processor|tick_FSM:tick_fsm ; tick_FSM    ; work         ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                     ;
++-----------------------------------------------------+------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                      ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------------+------------------------+
+; simple_proc:u_processor|opcode[0]                   ; simple_proc:u_processor|Decoder56        ; yes                    ;
+; simple_proc:u_processor|reg_y[2]                    ; simple_proc:u_processor|Decoder56        ; yes                    ;
+; simple_proc:u_processor|reg_x[2]                    ; simple_proc:u_processor|Decoder56        ; yes                    ;
+; simple_proc:u_processor|opcode[2]                   ; simple_proc:u_processor|Decoder56        ; yes                    ;
+; simple_proc:u_processor|opcode[1]                   ; simple_proc:u_processor|Decoder56        ; yes                    ;
+; simple_proc:u_processor|reg_y[1]                    ; simple_proc:u_processor|Decoder56        ; yes                    ;
+; simple_proc:u_processor|reg_x[1]                    ; simple_proc:u_processor|Decoder56        ; yes                    ;
+; simple_proc:u_processor|reg_x[0]                    ; simple_proc:u_processor|Decoder56        ; yes                    ;
+; simple_proc:u_processor|reg_y[0]                    ; simple_proc:u_processor|Decoder56        ; yes                    ;
+; simple_proc:u_processor|immediate_reg[0]            ; simple_proc:u_processor|immediate_reg[8] ; yes                    ;
+; simple_proc:u_processor|immediate_reg[1]            ; simple_proc:u_processor|immediate_reg[8] ; yes                    ;
+; simple_proc:u_processor|immediate_reg[2]            ; simple_proc:u_processor|immediate_reg[8] ; yes                    ;
+; simple_proc:u_processor|immediate_reg[3]            ; simple_proc:u_processor|immediate_reg[8] ; yes                    ;
+; simple_proc:u_processor|immediate_reg[4]            ; simple_proc:u_processor|immediate_reg[8] ; yes                    ;
+; simple_proc:u_processor|immediate_reg[5]            ; simple_proc:u_processor|immediate_reg[8] ; yes                    ;
+; simple_proc:u_processor|immediate_reg[6]            ; simple_proc:u_processor|immediate_reg[8] ; yes                    ;
+; simple_proc:u_processor|immediate_reg[7]            ; simple_proc:u_processor|immediate_reg[8] ; yes                    ;
+; simple_proc:u_processor|immediate_reg[8]            ; simple_proc:u_processor|immediate_reg[8] ; yes                    ;
+; simple_proc:u_processor|tick_bcd[1]                 ; simple_proc:u_processor|Mux21            ; yes                    ;
+; simple_proc:u_processor|tick_bcd[0]                 ; simple_proc:u_processor|Mux21            ; yes                    ;
+; simple_proc:u_processor|tick_bcd[2]                 ; simple_proc:u_processor|Mux21            ; yes                    ;
+; simple_proc:u_processor|alu_op_reg[1]               ; simple_proc:u_processor|alu_op_reg[1]    ; yes                    ;
+; simple_proc:u_processor|RI_enable                   ; simple_proc:u_processor|WideOr16         ; yes                    ;
+; Number of user-specified and inferred latches = 23  ;                                          ;                        ;
++-----------------------------------------------------+------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 173   ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 169   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:reg0|Q[0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:reg1|Q[0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:reg2|Q[0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:reg3|Q[0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:reg4|Q[0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:reg5|Q[0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:reg6|Q[0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:reg7|Q[0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:regG|Q[0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:regA|Q[9]   ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |proc_inst|simple_proc:u_processor|register_n:reg_IR|Q[8] ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 56 LEs               ; 24 LEs                 ; No         ; |proc_inst|simple_proc:u_processor|multiplexer:mux|Mux14  ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 56 LEs               ; 8 LEs                  ; No         ; |proc_inst|simple_proc:u_processor|multiplexer:mux|Mux6   ;
+; 24:1               ; 8 bits    ; 128 LEs       ; 8 LEs                ; 120 LEs                ; No         ; |proc_inst|simple_proc:u_processor|Selector3              ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |proc_inst|simple_proc:u_processor|Mux15                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; N              ; 16    ; Signed Integer                              ;
+; SEL_R0         ; 0000  ; Unsigned Binary                             ;
+; SEL_R1         ; 0001  ; Unsigned Binary                             ;
+; SEL_R2         ; 0010  ; Unsigned Binary                             ;
+; SEL_R3         ; 0011  ; Unsigned Binary                             ;
+; SEL_R4         ; 0100  ; Unsigned Binary                             ;
+; SEL_R5         ; 0101  ; Unsigned Binary                             ;
+; SEL_R6         ; 0110  ; Unsigned Binary                             ;
+; SEL_R7         ; 0111  ; Unsigned Binary                             ;
+; SEL_IMMEDIATE  ; 1000  ; Unsigned Binary                             ;
+; SEL_G          ; 1001  ; Unsigned Binary                             ;
+; ena_R0         ; 000   ; Unsigned Binary                             ;
+; ena_R1         ; 001   ; Unsigned Binary                             ;
+; ena_R2         ; 010   ; Unsigned Binary                             ;
+; ena_R3         ; 011   ; Unsigned Binary                             ;
+; ena_R4         ; 100   ; Unsigned Binary                             ;
+; ena_R5         ; 101   ; Unsigned Binary                             ;
+; ena_R6         ; 110   ; Unsigned Binary                             ;
+; ena_R7         ; 111   ; Unsigned Binary                             ;
+; MOVI_OP        ; 111   ; Unsigned Binary                             ;
+; ADDI_OP        ; 010   ; Unsigned Binary                             ;
+; ADD_OP         ; 001   ; Unsigned Binary                             ;
+; SUB_OP         ; 011   ; Unsigned Binary                             ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg_IR ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; N              ; 9     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg0 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg1 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg3 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg5 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg6 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:reg7 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:regA ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|register_n:regG ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_proc:u_processor|tick_FSM:tick_fsm ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; TICK1          ; 0001  ; Unsigned Binary                                               ;
+; TICK2          ; 0010  ; Unsigned Binary                                               ;
+; TICK3          ; 0100  ; Unsigned Binary                                               ;
+; TICK4          ; 1000  ; Unsigned Binary                                               ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_proc:u_processor|BCD:tick_hex5"                                                                                                            ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; A         ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; dp_enable ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; dp        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_proc:u_processor|tick_FSM:tick_fsm" ;
++--------+-------+----------+-------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                   ;
++--------+-------+----------+-------------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                              ;
++--------+-------+----------+-------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "simple_proc:u_processor|ALU:alu" ;
++-----------+-------+----------+------------------------------+
+; Port      ; Type  ; Severity ; Details                      ;
++-----------+-------+----------+------------------------------+
+; alu_op[2] ; Input ; Info     ; Stuck at GND                 ;
+; alu_op[0] ; Input ; Info     ; Stuck at VCC                 ;
++-----------+-------+----------+------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_proc:u_processor"                                                                   ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; bus[15..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; R0          ; Output ; Info     ; Explicitly unconnected                                                              ;
+; R1          ; Output ; Info     ; Explicitly unconnected                                                              ;
+; R2          ; Output ; Info     ; Explicitly unconnected                                                              ;
+; R3          ; Output ; Info     ; Explicitly unconnected                                                              ;
+; R4          ; Output ; Info     ; Explicitly unconnected                                                              ;
+; R5          ; Output ; Info     ; Explicitly unconnected                                                              ;
+; R6          ; Output ; Info     ; Explicitly unconnected                                                              ;
+; R7          ; Output ; Info     ; Explicitly unconnected                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 28                          ;
+; cycloneiii_ff         ; 173                         ;
+;     ENA               ; 153                         ;
+;     ENA SCLR          ; 16                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 3                           ;
+; cycloneiii_lcell_comb ; 267                         ;
+;     arith             ; 15                          ;
+;         3 data inputs ; 15                          ;
+;     normal            ; 252                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 49                          ;
+;         3 data inputs ; 53                          ;
+;         4 data inputs ; 143                         ;
+;                       ;                             ;
+; Max LUT depth         ; 14.50                       ;
+; Average LUT depth     ; 8.88                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat Oct 12 11:40:46 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ece2072_project_x72 -c ece2072_project_x72
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 5 design units, including 5 entities, in source file components.v
+    Info (12023): Found entity 1: sign_extend File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 9
+    Info (12023): Found entity 2: tick_FSM File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 25
+    Info (12023): Found entity 3: multiplexer File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 61
+    Info (12023): Found entity 4: ALU File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 98
+    Info (12023): Found entity 5: register_n File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 174
+Info (12021): Found 1 design units, including 1 entities, in source file sign_extend_tb.v
+    Info (12023): Found entity 1: sign_extend_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/sign_extend_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tick_fsm_tb.v
+    Info (12023): Found entity 1: tick_FSM_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/tick_FSM_tb.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexer_tb.v
+    Info (12023): Found entity 1: multiplexer_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/multiplexer_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.v
+    Info (12023): Found entity 1: ALU_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/ALU_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file register_n_tb.v
+    Info (12023): Found entity 1: register_n_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/register_n_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file proc.v
+    Info (12023): Found entity 1: simple_proc File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file bcd.v
+    Info (12023): Found entity 1: BCD File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/BCD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc_inst.v
+    Info (12023): Found entity 1: proc_inst File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_inst.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc_tb.v
+    Info (12023): Found entity 1: proc_tb File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file binary_to_bcd.v
+    Info (12023): Found entity 1: binary_to_bcd File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/binary_to_bcd.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc_extension.v
+    Info (12023): Found entity 1: simple_proc_extension File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file proc_extension_inst.v
+    Info (12023): Found entity 1: proc_extension_inst File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_extension_inst.v Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file proc_memory.v
+Info (12021): Found 1 design units, including 1 entities, in source file rom.v
+    Info (12023): Found entity 1: ROM File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/ROM.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file clock_10hz.v
+    Info (12023): Found entity 1: clock_10hz File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/clock_10hz.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc_memory_inst.v
+    Info (12023): Found entity 1: proc_memory_inst File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_memory_inst.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at proc_memory_inst.v(13): created implicit net for "CLOCK_50" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_memory_inst.v Line: 13
+Warning (10236): Verilog HDL Implicit Net warning at proc_memory_inst.v(13): created implicit net for "clock_10" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_memory_inst.v Line: 13
+Info (12127): Elaborating entity "proc_inst" for the top level hierarchy
+Info (12128): Elaborating entity "simple_proc" for hierarchy "simple_proc:u_processor" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc_inst.v Line: 27
+Critical Warning (10237): Verilog HDL warning at proc.v(113): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 113
+Critical Warning (10237): Verilog HDL warning at proc.v(114): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 114
+Critical Warning (10237): Verilog HDL warning at proc.v(115): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 115
+Critical Warning (10237): Verilog HDL warning at proc.v(116): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 116
+Critical Warning (10237): Verilog HDL warning at proc.v(117): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 117
+Critical Warning (10237): Verilog HDL warning at proc.v(118): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 118
+Critical Warning (10237): Verilog HDL warning at proc.v(119): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 119
+Critical Warning (10237): Verilog HDL warning at proc.v(120): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 120
+Critical Warning (10237): Verilog HDL warning at proc.v(121): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 121
+Critical Warning (10237): Verilog HDL warning at proc.v(122): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 122
+Critical Warning (10237): Verilog HDL warning at proc.v(123): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 123
+Warning (10270): Verilog HDL Case Statement warning at proc.v(140): incomplete case statement has no default case item File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 140
+Warning (10270): Verilog HDL Case Statement warning at proc.v(197): incomplete case statement has no default case item File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 197
+Warning (10270): Verilog HDL Case Statement warning at proc.v(258): incomplete case statement has no default case item File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 258
+Warning (10270): Verilog HDL Case Statement warning at proc.v(124): incomplete case statement has no default case item File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 124
+Info (10264): Verilog HDL Case Statement information at proc.v(124): all case item expressions in this case statement are onehot File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 124
+Warning (10240): Verilog HDL Always Construct warning at proc.v(111): inferring latch(es) for variable "tick_bcd", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at proc.v(111): inferring latch(es) for variable "alu_op_reg", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at proc.v(111): inferring latch(es) for variable "RI_enable", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at proc.v(111): inferring latch(es) for variable "immediate_reg", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at proc.v(111): inferring latch(es) for variable "opcode", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at proc.v(111): inferring latch(es) for variable "reg_x", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at proc.v(111): inferring latch(es) for variable "reg_y", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "reg_y[0]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "reg_y[1]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "reg_y[2]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "reg_x[0]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "reg_x[1]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "reg_x[2]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "opcode[0]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "opcode[1]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "opcode[2]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "immediate_reg[0]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "immediate_reg[1]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "immediate_reg[2]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "immediate_reg[3]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "immediate_reg[4]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "immediate_reg[5]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "immediate_reg[6]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "immediate_reg[7]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "immediate_reg[8]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "RI_enable" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "alu_op_reg[0]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "alu_op_reg[1]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "alu_op_reg[2]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "tick_bcd[0]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "tick_bcd[1]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "tick_bcd[2]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (10041): Inferred latch for "tick_bcd[3]" at proc.v(111) File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Info (12128): Elaborating entity "sign_extend" for hierarchy "simple_proc:u_processor|sign_extend:s_ext" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 71
+Info (12128): Elaborating entity "register_n" for hierarchy "simple_proc:u_processor|register_n:reg_IR" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 75
+Info (12128): Elaborating entity "register_n" for hierarchy "simple_proc:u_processor|register_n:reg0" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 77
+Info (12128): Elaborating entity "multiplexer" for hierarchy "simple_proc:u_processor|multiplexer:mux" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 95
+Info (12128): Elaborating entity "ALU" for hierarchy "simple_proc:u_processor|ALU:alu" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 98
+Warning (10240): Verilog HDL Always Construct warning at components.v(110): inferring latch(es) for variable "mult_result", which holds its previous value in one or more paths through the always construct File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 110
+Info (12128): Elaborating entity "tick_FSM" for hierarchy "simple_proc:u_processor|tick_FSM:tick_fsm" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 101
+Info (10264): Verilog HDL Case Statement information at components.v(50): all case item expressions in this case statement are onehot File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 50
+Info (12128): Elaborating entity "BCD" for hierarchy "simple_proc:u_processor|BCD:tick_hex5" File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 108
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch simple_proc:u_processor|tick_bcd[1] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc:u_processor|tick_FSM:tick_fsm|tick[1] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc:u_processor|tick_bcd[0] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc:u_processor|tick_FSM:tick_fsm|tick[2] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc:u_processor|tick_bcd[2] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc:u_processor|tick_FSM:tick_fsm|tick[1] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Warning (13012): Latch simple_proc:u_processor|alu_op_reg[1] has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc:u_processor|opcode[1] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 111
+Warning (13012): Latch simple_proc:u_processor|RI_enable has unsafe behavior File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/proc.v Line: 27
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal simple_proc:u_processor|tick_FSM:tick_fsm|tick[1] File: C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/components.v Line: 43
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/output_files/ece2072_project_x72.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 432 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 404 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 4792 megabytes
+    Info: Processing ended: Sat Oct 12 11:41:00 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:09
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/mbcra/Documents/MONASH/main/ECE2072/Project/ece2072_project/output_files/ece2072_project_x72.map.smsg.
+
+

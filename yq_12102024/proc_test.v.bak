@@ -1,0 +1,155 @@
+/*
+Monash University ECE2072: Assignment 
+This file contains Verilog code to implement the individual CPU.
+
+Please enter your student ID: Liew You Qing 33590400
+*/
+module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
+
+    // Declare inputs and outputs:
+    input clk, rst;
+    input [8:0] din;
+    output wire [15:0] bus;
+    output wire [15:0] R0, R1, R2, R3, R4, R5, R6, R7; // Output ports for registers
+    
+    // Declare wires:
+    wire [15:0] A, G, ext_din, alu_result, mux_out;
+    wire [2:0] alu_op;
+    wire [3:0] tick;
+    wire [3:0] mux_sel;
+
+    // Enable signals (declared as reg because they are used in sequential logic):
+    reg r_in_a, r_in_g, r_in_i, enable; // a, g, tick
+    reg [8:0] reg_in; // Enable signals for R0 - R7 and IR
+    reg [8:0] IR; // Current instruction
+
+    // Set the ALU operation code directly from IR[8:6]:
+    assign alu_op = IR[8:6];
+
+    // Instantiate the Sign Extender:
+    sign_extend s_ext(.in(din), .ext(ext_din));
+
+    // Instantiate Registers:
+    register_n #(.N(9)) reg_IR(.data_in(din), .r_in(r_in_i), .clk(clk), .Q(IR), .rst(rst)); // Instruction register
+    register_n #(.N(N)) reg0(.data_in(mux_out), .r_in(reg_in[0]), .clk(clk), .Q(R0), .rst(rst));
+    register_n #(.N(N)) reg1(.data_in(mux_out), .r_in(reg_in[1]), .clk(clk), .Q(R1), .rst(rst));
+    register_n #(.N(N)) reg2(.data_in(mux_out), .r_in(reg_in[2]), .clk(clk), .Q(R2), .rst(rst));
+    register_n #(.N(N)) reg3(.data_in(mux_out), .r_in(reg_in[3]), .clk(clk), .Q(R3), .rst(rst));
+    register_n #(.N(N)) reg4(.data_in(mux_out), .r_in(reg_in[4]), .clk(clk), .Q(R4), .rst(rst));
+    register_n #(.N(N)) reg5(.data_in(mux_out), .r_in(reg_in[5]), .clk(clk), .Q(R5), .rst(rst));
+    register_n #(.N(N)) reg6(.data_in(mux_out), .r_in(reg_in[6]), .clk(clk), .Q(R6), .rst(rst));
+    register_n #(.N(N)) reg7(.data_in(mux_out), .r_in(reg_in[7]), .clk(clk), .Q(R7), .rst(rst));
+    register_n #(.N(N)) regA(.data_in(mux_out), .r_in(r_in_a), .clk(clk), .Q(A), .rst(rst)); // A
+    register_n #(.N(N)) regG(.data_in(alu_result), .r_in(r_in_g), .clk(clk), .Q(G), .rst(rst)); // G
+
+    // Instantiate Multiplexer:
+    multiplexer mux(
+        .R0(R0), .R1(R1), .R2(R2), .R3(R3), 
+        .R4(R4), .R5(R5), .R6(R6), .R7(R7), 
+        .G(G), .SignExtDin(ext_din), 
+        .sel(mux_sel), .Bus(bus)
+    );
+
+    // Instantiate ALU:
+    ALU alu(
+        .input_a(A), 
+        .input_b(mux_out), 
+        .alu_op(alu_op), 
+        .result(alu_result)
+    );
+
+    // Instantiate Tick Counter:
+    tick_FSM tick_fsm(
+        .rst(rst), 
+        .clk(clk), 
+        .enable(enable), 
+        .tick(tick)
+    );
+
+    // Define Control Unit Logic:
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            // Reset all control signals
+            reg_in <= 9'b0;
+            r_in_a <= 1'b0;
+            r_in_g <= 1'b0;
+            r_in_i <= 1'b0;
+            mux_sel <= 4'b0000;
+            enable <= 1'b0;
+        end else begin
+            // Control signals based on the current tick
+            case (tick)
+                4'b0001: begin // Tick 1: Load instruction into IR
+                    r_in_i <= 1'b1; // Enable write for IR register
+                    // Turn off other control signals
+                    r_in_a <= 1'b0;
+                    r_in_g <= 1'b0;
+                    reg_in <= 9'b0;
+                    mux_sel <= 4'b0000;
+                    enable <= 1'b1;
+                end
+
+                4'b0010: begin // Tick 2: Handle the operation type
+                    r_in_i <= 1'b0; // Disable IR write
+                    case (alu_op)
+                        3'b111: begin // movi Rx, Immi
+                            mux_sel <= 4'b1001; // Select immediate value from SignExtDin
+                            reg_in[IR[5:3]] <= 1'b1; // Write immediate value from SignExtDin to Rx
+                        end
+
+                        3'b001, 3'b011: begin // add, sub
+                            mux_sel <= IR[5:3]; // Select Rx
+                            r_in_a <= 1'b1; // Load Rx into A register
+                        end
+
+                        3'b010: begin // addi Rx, Immi
+                            mux_sel <= 4'b1001; // Select immediate value from SignExtDin
+                            r_in_a <= 1'b1; // Load immediate value into A register
+                        end
+
+                        default: begin
+                            mux_sel <= 4'b0000; // No operation
+                        end
+                    endcase
+                end
+
+                4'b0011: begin // Tick 3: Perform ALU operation if applicable
+                    r_in_a <= 1'b0; // Disable A register write
+                    r_in_g <= 1'b1; // Enable G register write for storing ALU result
+                    case (alu_op)
+                        3'b001, 3'b011: begin // add, sub
+                            mux_sel <= IR[2:0]; // Select Ry for ALU input
+                        end
+
+                        3'b010: begin // addi Rx, Immi
+                            mux_sel <= IR[5:3]; // Select Rx for ALU input
+                        end
+
+                        default: begin
+                            r_in_g <= 1'b0;
+                        end
+                    endcase
+                end
+
+                4'b0100: begin // Tick 4: Write back the result if needed
+                    r_in_g <= 1'b0; // Disable G register write
+                    if (alu_op != 3'b000 && alu_op != 3'b111) begin // Write back to Rx if not disp or movi
+                        reg_in[IR[5:3]] <= 1'b1;
+                    end
+                    mux_sel <= 4'b0000; // Reset mux_sel to default
+                end
+
+                default: begin
+                    // Default state, reset control signals
+                    reg_in <= 9'b0;
+                    r_in_a <= 1'b0;
+                    r_in_g <= 1'b0;
+                    r_in_i <= 1'b0;
+                    mux_sel <= 4'b0000;
+                    enable <= 1'b0;
+                end
+            endcase
+        end
+    end
+
+endmodule

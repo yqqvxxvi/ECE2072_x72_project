@@ -1,0 +1,14 @@
+module clock_10hz(
+	input CLOCK_50;
+);
+		reg [21:0] counter_bit; // 22bit counter
+		reg clock_10;
+		reg [9:0] ledr_counter;
+		
+		always @(posedge CLOCK_50) begin
+			counter_bit <= counter_bit + 1;
+			
+			clock_10 <= counter_bit[21:21];
+		 
+		end 
+endmodule 
